@@ -5,9 +5,9 @@ import os
 import time
 import datetime
 
-root = r"H:\Timeline"
-output_filename = "file_finder_H_Track-it.txt"
-file_extension = ".docx"
+root = r"H:\Timeline\2020"
+output_filename = "file_finder_H_Python.txt"
+file_extension = ".py"
 
 def main(root, output_filename,file_extension):
     # Create output file
@@ -18,7 +18,7 @@ def main(root, output_filename,file_extension):
         print("Starting at root",root)
         for file in files:
             #print("Exaluating file",file)
-            if file.endswith(file_extension) and file[0:8] == "Track-it":
+            if file.endswith(file_extension): # and file[0:8] == "Track-it":
                 file_time = time.ctime(os.path.getmtime(os.path.join(root, file)))
                 file_date = str(datetime.datetime.strptime(file_time, "%a %b %d %H:%M:%S %Y"))
                 output_file.write(str(file_date[0:10])+" "+os.path.join(root,file)+"\n")
