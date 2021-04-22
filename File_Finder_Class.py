@@ -3,21 +3,19 @@
 # Last updated 202104180900
 
 import os
-#import time
-#import datetime
 
 class File_Finder_Class:
     def __init__(self):
         pass
 
     def get_all_file_list(self, root):
-        matching_list = list() # The thing to return
+        file_list = list() # The thing to return
         
         for root, dirs, files in os.walk(root):
             for file in files:
-                matching_list.append(os.path.join(root, file))
+                file_list.append(os.path.join(root, file))
 
-        return matching_list
+        return file_list
 
     def get_matching_list(self, root, search_term, search_type):
         matching_list = list() # The thing to return
@@ -49,10 +47,9 @@ class File_Finder_Class:
                 <!DOCTYPE html>
                 <html>
                     <head>
-                    <title>File Finder</title>
+                        <title>File Finder</title>
                     </head>
                     <body>
-
                     <h1 style="font-family:verdana;">Search Results:</h1>
                 """
             html_output_file.write(header)
