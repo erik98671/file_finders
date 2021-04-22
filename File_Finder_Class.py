@@ -62,6 +62,7 @@ class File_Finder_Class:
             html_output_file.write("</body></html>")
 
     def get_intersection_list(self, list_1, list_2):
+        intersection_lists = list()
         set_1 = set(list_1)
         set_2 = set(list_2)
         set_intersection = set_1.intersection(set_2)
