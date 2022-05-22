@@ -31,7 +31,10 @@ class File_Finder_Class:
         elif search_type == 2:  # Contains
             for file in self.get_all_file_list(root):
                 if search_term in file:
+                    print(f"File: {file}")
+                    print(f"Root: {root}")
                     matching_list.append(file)
+                    hold_for_user = input("")
         
         elif search_type == 3: # Ends with
             for file in self.get_all_file_list(root):
@@ -73,11 +76,11 @@ class File_Finder_Class:
 if __name__ == "__main__":
     finder = File_Finder_Class()
     
-    root = r"/Users/erikbraun/Documents"
+    root = r"H:\Timeline\2021"
     
-    search_term = "pdf"
+    #search_term = "pdf"
     #search_term = "test"
-    #search_term = "t"
+    search_term = "recycle"
 
     # Testing searching files
 ##    for file in finder.get_all_file_list(root): print(file)
@@ -89,11 +92,13 @@ if __name__ == "__main__":
 
     # Testing writing html
 ##    finder.write_html(finder.get_all_file_list(root))
-##    finder.write_html(finder.get_matching_list(root, search_term, 3))
-    finder.write_html(finder.get_intersection_list(finder.get_matching_list(root, "T", 1),
-                                                 finder.get_matching_list(root, "pdf", 3)
-                                                 )
-                      )
+
+    finder.write_html(finder.get_matching_list(root, search_term, 2))
+
+##    finder.write_html(finder.get_intersection_list(finder.get_matching_list(root, "Track-it", 1),
+##                                                 finder.get_matching_list(root, "docx", 3)
+##                                                 )
+##                      )
 
 '''
             for file in files:
